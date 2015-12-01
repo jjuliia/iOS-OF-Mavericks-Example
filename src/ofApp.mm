@@ -18,11 +18,28 @@ void ofApp::update(){
 void ofApp::draw(){
     ofEnableAlphaBlending();
     if(lastTouch.x!=0 && lastTouch.y!=0){
-        ofSetColor(114,176,140);
+        ofSetColor(100,16,120);
+        ofLight();
+        //spotlight.enable();
         ofFill();
-        ofCircle(lastTouch.x,lastTouch.y, 30);
-    }
+        ofDrawCylinder(lastTouch.x, lastTouch.y, 50, 200);
+        ofCircle(lastTouch.x,lastTouch.y, 30);ofSetSmoothLighting(true);
+        
+        ofEnableDepthTest();
+        //ofSetColor(pointLight.getDiffuseColor());
+        
+        ofEnableLighting();
+        
+
+    
+
+        //spotlight.disable();
+         }
 }
+
+
+
+
 
 //--------------------------------------------------------------
 void ofApp::exit(){
